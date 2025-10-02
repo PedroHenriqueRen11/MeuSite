@@ -1,13 +1,11 @@
-/* Definições Globais e Cores */
 :root {
-    --color-background-blue: #004d99; /* Azul Escuro */
-    --color-central-bg: #f0f0f0;    /* Fundo Claro para a Tela Central */
-    --color-text-light: #ffffff;    /* Texto Claro */
-    --color-text-dark: #333333;     /* Texto Escuro */
-    --color-accent: #ffcc00;        /* Amarelo/Destaque */
+    --color-background-blue: #004d99;
+    --color-central-bg: #009df1;
+    --color-text-light: #ffffff;
+    --color-text-dark: #333333;
+    --color-accent: #ffcc00;
 }
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -20,19 +18,17 @@ body {
     background-color: var(--color-background-blue);
 }
 
-/* Estilo das Seções (Frames) */
 .section {
     min-height: 100vh;
     padding: 60px 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Mantido para centralizar o CONTEÚDO principal */
+    align-items: center;
     text-align: center;
     position: relative;
 }
 
-/* Frames Azuis */
 .blue-frame {
     background-color: var(--color-background-blue);
     color: var(--color-text-light);
@@ -54,13 +50,10 @@ body {
     line-height: 1.4;
 }
 
-/* ------------------------------------------------------------------ */
-/* BOTÃO VOLTAR AO INÍCIO (SUPERIOR ESQUERDO) - CORRIGIDO */
-/* ------------------------------------------------------------------ */
 .back-to-home-link {
     position: absolute;
     top: 20px;
-    left: 20px; /* canto superior esquerdo */
+    left: 20px;
     text-decoration: none;
     color: var(--color-accent);
     font-weight: bold;
@@ -77,9 +70,6 @@ body {
     color: var(--color-background-blue);
 }
 
-/* ------------------------------------------------------------------ */
-
-/* Frame Central (Início) */
 .central-frame {
     background-color: var(--color-central-bg);
     color: var(--color-text-dark);
@@ -87,28 +77,7 @@ body {
     padding-top: 50px;
 }
 
-/* Navegação Principal */
-.main-nav {
-    position: absolute;
-    top: 20px;
-    right: 5%;
-    display: flex;
-    gap: 20px;
-}
 
-.main-nav a {
-    text-decoration: none;
-    color: var(--color-text-dark);
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: color 0.3s;
-}
-
-.main-nav a:hover {
-    color: var(--color-accent);
-}
-
-/* Área de Perfil no Frame Central */
 .profile-area {
     margin-top: 50px;
 }
@@ -127,7 +96,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Links/Botões de Resumo no Frame Central */
 .resumo-links {
     display: flex;
     gap: 20px;
@@ -152,7 +120,6 @@ body {
     background-color: #0066cc;
 }
 
-/* Estrutura das informações (Formações, Cursos) */
 .info-group {
     display: flex;
     gap: 40px;
@@ -174,15 +141,11 @@ body {
     margin-bottom: 5px;
 }
 
-/* ------------------------------------------------------------------ */
-/* GRID DE PROJETOS */
-/* ------------------------------------------------------------------ */
-
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 1000px; 
+    max-width: 1000px;
     width: 100%;
     margin: 40px auto;
 }
@@ -194,8 +157,8 @@ body {
     overflow: hidden;
     text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -207,15 +170,15 @@ body {
     width: 100%;
     height: 180px;
     background-color: #ffffff;
-    object-fit: cover; 
-    border-bottom: 2px solid var(--color-accent); 
+    object-fit: cover;
+    border-bottom: 2px solid var(--color-accent);
 }
 
 .project-info {
-    padding: 15px; 
+    padding: 15px;
     background-color: #000000;
     color: var(--color-text-light);
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 .project-info h3 {
@@ -246,12 +209,11 @@ body {
     color: #ffffff;
 }
 
-/* Lista de Contatos */
 .contact-list {
     display: flex;
-    flex-direction: column; /* um embaixo do outro */
+    flex-direction: column;
     gap: 15px;
-    align-items: flex-start; /* alinhado à esquerda */
+    align-items: flex-start;
 }
 
 .contact-item {
@@ -273,7 +235,6 @@ body {
     margin-right: 10px;
 }
 
-/* Estilos para a lista de Habilidades */
 #habilidades ul {
     list-style: none;
     padding: 0;
@@ -289,57 +250,57 @@ body {
     border-radius: 5px;
 }
 
-/* ------------------------------------------------------------------ */
-/* MEDIA QUERIES (RESPONSIVIDADE) */
-/* ------------------------------------------------------------------ */
 
-/* Projetos: Ajustes para tablets e celulares */
-@media (max-width: 992px) { 
+@media (max-width: 992px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (max-width: 576px) { 
+
+@media (max-width: 576px) {
     .projects-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* Geral: Ajustes para telas menores (768px e abaixo) */
+
 @media (max-width: 768px) {
     .central-frame {
         padding-top: 80px;
     }
+
     .main-nav {
         display: none;
     }
+
     .resumo-links {
         flex-direction: column;
     }
+
     .resumo-btn {
         width: 80%;
     }
+
     .info-group {
         flex-direction: column;
         gap: 20px;
     }
-    
-    /* CORREÇÃO: Força o botão para a esquerda, anulando outras regras */
+
+
     .back-to-home-link {
-        left: 20px; /* Mais perto da borda */
-        right: auto; 
+        left: 20px;
+        right: auto;
         top: 20px;
     }
-    
-    /* CORREÇÃO: Garante que Contatos e outras listas fiquem em 1 coluna */
+
     .contact-list {
         align-items: center;
     }
+
     .contact-item {
         justify-content: center;
     }
-    
-    /* CORREÇÃO: Garante que a lista de habilidades fique em 1 coluna */
+
     #habilidades ul {
         grid-template-columns: 1fr;
     }
